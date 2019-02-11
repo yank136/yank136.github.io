@@ -1,0 +1,61 @@
+body{
+    background: rgba(0,0,0,0.9); 
+}
+.pic{
+    min-width: 640px;
+    margin: 0 auto;
+}
+.pic_wrap{
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+.pic_wrap .pic_img{
+    height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+.pic_wrap .pic_img li{
+    float: right;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+}
+.clear_fix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.pic_wrap .pic_img li img{
+    height: 100%;
+}
+.left_button{
+    cursor: pointer;
+    height: 71px;
+    width: 71px;
+    top: 50%;
+    left: 65px;
+    position: absolute;
+}
+.left_button img{
+    width: 100%;
+    height: 100%;
+}
+
+.right_button{
+    cursor: pointer;
+    height: 71px;
+    width: 71px;
+    top: 50%;
+    right: 65px;
+    position: absolute;
+}
+.right_button img{
+    width: 100%;
+    height: 100%;
+}
