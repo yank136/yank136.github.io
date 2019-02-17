@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yank136.club">
-  <title>Tag: 通知 | Yank的博客</title>
+  <title>SQL学习笔记一：数据库初始化 | Yank的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="呼呼熊">
-<meta name="keywords" content="初学者,物联网,智能家居,爱好者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Yank的博客">
-<meta property="og:url" content="http://yank136.club/tags/通知/index.html">
+  <meta name="description" content="数据库初始化主要步骤: -&amp;gt; 1 创建数据库-&amp;gt; 2 创建数据表-&amp;gt; 3 插入数据-&amp;gt; 4 运行SQL脚本">
+<meta name="keywords" content="SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL学习笔记一：数据库初始化">
+<meta property="og:url" content="http://yank136.club/2019/02/17/init-data-sql/index.html">
 <meta property="og:site_name" content="Yank的博客">
-<meta property="og:description" content="呼呼熊">
+<meta property="og:description" content="数据库初始化主要步骤: -&amp;gt; 1 创建数据库-&amp;gt; 2 创建数据表-&amp;gt; 3 插入数据-&amp;gt; 4 运行SQL脚本">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-17T15:31:39.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yank的博客">
-<meta name="twitter:description" content="呼呼熊">
+<meta name="twitter:title" content="SQL学习笔记一：数据库初始化">
+<meta name="twitter:description" content="数据库初始化主要步骤: -&amp;gt; 1 创建数据库-&amp;gt; 2 创建数据表-&amp;gt; 3 插入数据-&amp;gt; 4 运行SQL脚本">
   
     <link rel="alternative" href="/atom.xml" title="Yank的博客" type="application/atom+xml">
   
@@ -158,60 +159,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-init-data-sql" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/11/notice/" class="archive-article-date">
-  	<time datetime="2019-02-11T08:48:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/11/notice/">通知</a>
+    <h1 class="article-title" itemprop="name">
+      SQL学习笔记一：数据库初始化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/02/17/init-data-sql/" class="archive-article-date">
+  	<time datetime="2019-02-17T15:19:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库初始化"><a href="#数据库初始化" class="headerlink" title="数据库初始化"></a>数据库初始化</h1><h2 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤:"></a>主要步骤:</h2><blockquote>
+<p>-&gt; 1 创建数据库<br>-&gt; 2 创建数据表<br>-&gt; 3 插入数据<br>-&gt; 4 运行SQL脚本</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1 创建数据库"></a>1 创建数据库</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 如果test数据库不存在，就创建</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span> <span class="keyword">test</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 切换到 test 数据库</span></span><br><span class="line"><span class="keyword">USE</span> <span class="keyword">test</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建数据表"><a href="#2-创建数据表" class="headerlink" title="2 创建数据表"></a>2 创建数据表</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 创建classes表</span><br><span class="line">CREATE TABLE classes(</span><br><span class="line">	id BINGINT <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">	name VARCHAR(100) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">	PRIMARY KEY(`id`)</span><br><span class="line">)<span class="attribute">ENGINE</span>=InnoDB<span class="built_in"> DEFAULT </span><span class="attribute">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure>
+<h2 id="3-插入数据"><a href="#3-插入数据" class="headerlink" title="3 插入数据"></a>3 插入数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 插入classes记录</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> classes(<span class="keyword">id</span>, <span class="keyword">name</span>) <span class="keyword">VALUES</span>(<span class="number">1</span>, <span class="string">'一班'</span>)；</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> classes(<span class="keyword">id</span>, <span class="keyword">name</span>) <span class="keyword">VALUES</span>(<span class="number">2</span>, <span class="string">'二班'</span>)；</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> classes(<span class="keyword">id</span>, <span class="keyword">name</span>) <span class="keyword">VALUES</span>(<span class="number">3</span>, <span class="string">'三班'</span>)；</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> classes(<span class="keyword">id</span>, <span class="keyword">name</span>) <span class="keyword">VALUES</span>(<span class="number">4</span>, <span class="string">'四班'</span>)；</span><br></pre></td></tr></table></figure>
+<h2 id="4-运行脚本"><a href="#4-运行脚本" class="headerlink" title="4 运行脚本"></a>4 运行脚本</h2><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-- 保存为 <span class="keyword">init</span>-test-<span class="keyword">data</span>.sql, 然后在命令行运行：</span><br><span class="line">$ mysql -u root -p &lt; <span class="keyword">init</span>-test-<span class="keyword">data</span>.sql</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">通知</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SQL</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yank136.club/2019/02/17/init-data-sql/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/02/17/select/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SQL学习笔记二：查询数据
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/02/11/notice/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">通知</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yank136.club/2019/02/17/init-data-sql/",
+  owner: 'yank136',
+  repo: 'yank136.github.io',
+  oauth: {
+    client_id: 'e7aa1f65ba151650c7e0',
+    client_secret: 'f724af71575dfb5fab0feca0018f1aba80d51c5a',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -236,9 +385,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
